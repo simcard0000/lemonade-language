@@ -9,3 +9,4 @@ Some helpful links I accessed are:
 * [On using ANTLR and LLVM together](https://theantlrguy.atlassian.net/wiki/spaces/ANTLR3/pages/2687062/LLVM) (note: this pertains to ANTLR3)
 * [On parser generators and ANTLR](https://ocw.mit.edu/ans7870/6/6.005/s16/classes/18-parser-generators/)
 * [Some documentation about ANTLR](https://github.com/antlr/antlr4/blob/master/doc/index.md) 
+* [ANTLR symbol cheat sheet](https://theantlrguy.atlassian.net/wiki/spaces/ANTLR3/pages/2687036/ANTLR+Cheat+Sheet)
