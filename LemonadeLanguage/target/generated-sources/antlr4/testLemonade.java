@@ -16,7 +16,6 @@ public class testLemonade {
 
 		Scanner getInput = new Scanner(System.in);
 		String theInput = getInput.next();
-		getInput.close();
 
 		CharStream charInput = CharStreams.fromString(theInput);
 
@@ -27,6 +26,7 @@ public class testLemonade {
 		TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
 		
 		viewer.open();
+		getInput.close();
 		
 	}
 

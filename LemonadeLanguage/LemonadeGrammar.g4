@@ -10,8 +10,8 @@ options{
 parse
 :
 	(
-		lines NL
-	) EOF
+		lines NL*
+	)* EOF
 ;
 
 lines
@@ -49,6 +49,20 @@ DECLARE_BOOLEAN
 DECLARE_STRING
 :
 	'str'
+;
+
+//number inputs
+
+DECNUMS
+:
+	(
+		[.] [0-9]+
+	)
+;
+
+INTNUMS
+:
+	[-?0-9]+
 ;
 
 FUNCTION
@@ -206,27 +220,17 @@ TILDA
 
 //inputs
 
-VARNAMES
-:
-	[a-zA-z0-9]+
-;
-
-INTNUMS
-:
-	[-?0-9]+
-;
-
-DECNUMS
+BOOLEANS
 :
 	(
-		[.] [0-9]+
+		'true'
+		| 'false'
 	)
 ;
 
-BOOLEANS
+VARNAMES
 :
-	'true'
-	| 'false'
+	[a-zA-Z0-9]+
 ;
 
 STRINGS
@@ -239,20 +243,19 @@ STRINGS
 declaring_variables_statement
 :
 	(
-		DECLARE_INTNUM
-		| DECLARE_DECNUM
-		| DECLARE_BOOLEAN
-		| DECLARE_STRING
+		(DECLARE_INTNUM)
+		| (DECLARE_DECNUM)
+		| (DECLARE_BOOLEAN)
+		| (DECLARE_STRING)
 	) VARNAMES EQUALS
 	(
-		VARNAMES
-		| INTNUMS
-		| DECNUMS
-		| BOOLEANS
-		| STRINGS
-		| array_length_statement //returns an integer
-		| array_index_statement //returns stuff from array
-
+		(VARNAMES)
+		| (INTNUMS)
+		| (DECNUMS)
+		| (BOOLEANS)
+		| (STRINGS)
+		| (array_length_statement) //returns an integer
+		| (array_index_statement) //returns stuff from array
 	)
 ;
 
@@ -396,7 +399,6 @@ WS
 
 NL
 :
-	'\r'? '\n' -> skip
+	'\r'? '\n'
 ;
-
 //ignore tabs, spaces, and newlines

@@ -15,3 +15,9 @@
 /LemonadeGrammarListener.java
 /LemonadeGrammarParser.java
 /LemonadeGrammarCustomListener.java
+/jotterGrammar.tokens
+/jotterGrammarBaseListener.java
+/jotterGrammarLexer.java
+/jotterGrammarLexer.tokens
+/jotterGrammarListener.java
+/jotterGrammarParser.java
