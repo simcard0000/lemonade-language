@@ -551,6 +551,7 @@ class jotterGUI extends JFrame implements UndoableEditListener, Printable {
 				  } catch (FileNotFoundException e1) {
 					  e1.printStackTrace(); 
 				  } 
+				  
 				  ArrayList<String> storeWords = new ArrayList<String>(); 
 				  while (inputRead.hasNextLine()) { 
 					  String lineContent = inputRead.nextLine();

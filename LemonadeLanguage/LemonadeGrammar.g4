@@ -1,4 +1,3 @@
-//This is the grammar for the language.
 grammar LemonadeGrammar;
 
 //overarching statements
